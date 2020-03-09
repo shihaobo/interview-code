@@ -1,11 +1,11 @@
 import './static/css/style.css'
 import util from './tool/util'
 
+let aaaaa = 'asdasd'
 /**
  * 1
  */
 const res1 = [10, 20, 10].map(parseInt)
-console.log(res1) //[10, NaN, 2]
 
 /**
  * 2、手写字符串trim
@@ -23,7 +23,6 @@ Function.prototype.bind1 = function(){
 
     // 获取 this 数组第一项
     const t = args.shift()
-    console.log(t,'ttt')
 
     // f1.bind(...)中的f1
     const self = this;
@@ -34,8 +33,6 @@ Function.prototype.bind1 = function(){
 }
 
 function fn1(a, b, c){
-    console.log('this', this)
-    console.log(a, b, c)
     return 'this is fn1'
 }
 const fn2 = fn1.bind1({x :100}, 10 ,20, 30)
