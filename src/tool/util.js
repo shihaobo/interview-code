@@ -152,8 +152,29 @@ let util = {
             }, delay);
         }
 
+    },
+    // var array = [
+    //     {
+    //         id:1,
+    //         name:"小明"
+    //     },
+    //     {
+    //         id:2,
+    //         name:"小红"
+    //     }
+    // ];
+    // convertKey(array,{'id':'value','name':'label'});
+    /**
+     * 修改为想要的key值
+     */
+    convertKey(arr, keyMap) {
+        let tempString = JSON.stringify(arr)
+        for (var key in keyMap) {
+          var reg = new RegExp(`${key}`, 'g')
+          tempString = tempString.replace(reg, keyMap[key])
+        }
+        return JSON.parse(tempString)
     }
-
 }
 
 /**
